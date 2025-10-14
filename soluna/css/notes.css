@@ -1,0 +1,12 @@
+#notes-container {
+    margin: 2rem;
+}
+.page {
+    background-color: #f1f3f5;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+.page h2 {
+    margin: 0;
+}

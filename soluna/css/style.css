@@ -1,0 +1,44 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fdfdfd;
+    color: #333;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #4c6ef5;
+    color: #fff;
+}
+
+header img.logo {
+    height: 50px;
+    margin-right: 1rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+.dashboard-links a {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background-color: #f1f3f5;
+    border-radius: 5px;
+    color: #333;
+}
+
+.dashboard-links a:hover {
+    background-color: #dbe4ff;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
