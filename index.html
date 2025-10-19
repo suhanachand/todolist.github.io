@@ -9,17 +9,21 @@
     <script src="js/main.js" defer></script>
 </head>
 <body>
-    <header>
-        <img src="assets/logo.png" alt="Lumina Logo" class="logo">
-        <h1>Welcome to Lumina</h1>
-    </header>
+    <div class="app">
+        <header>
+            <h1>Soluna</h1>
+            <button id="mode-toggle">🌙</button>
+        </header>
 
-    <main>
-        <div class="login-section">
-            <button id="google-login-btn">Sign in with Google</button>
-        </div>
-
-        <div class="dashboard-links">
+        <main>
+            <section class="todo-section">
+                <h2>My Tasks</h2>
+                <div class="input-group">
+                    <input type="text" id="new-task" placeholder="Add a new task">
+                    <button id="add-task">Add</button>
+                </div>
+                <ul id="task-list"></ul>
+                <div class="dashboard-links">
             <a href="todo.html">To-Do List</a>
             <a href="notes.html">Notes & Pages</a>
             <a href="pomodoro.html">Pomodoro Timer</a>
@@ -37,7 +41,9 @@
             <a href="dashboard-custom.html">Custom Dashboard</a>
             <a href="widgets.html">Widgets</a>
         </div>
-    </main>
+            </section>
+        </main>
+    </div>
 
     <footer>
         <p>&copy; 2025 Lumina</p>
