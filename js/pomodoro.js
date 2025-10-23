@@ -1,41 +1,43 @@
-let pomTime = 25 * 60;
-let pomInterval;
-let sessions = 0;
+const pomDisplay = document.getElementById('pomDisplay');
+const pomStart = document.getElementById('pomStart');
+const pomPause = document.getElementById('pomPause');
+const pomReset = document.getElementById('pomReset');
+const pomSessions = document.getElementById('pomSessions');
 
-const display = document.getElementById("pomDisplay");
-const startBtn = document.getElementById("pomStart");
-const pauseBtn = document.getElementById("pomPause");
-const resetBtn = document.getElementById("pomReset");
-const sessionsEl = document.getElementById("pomSessions");
+let pomTime = 25*60, interval=null, sessions=0;
 
-function updateDisplay() {
-  const m = Math.floor(pomTime / 60).toString().padStart(2, "0");
-  const s = (pomTime % 60).toString().padStart(2, "0");
-  display.textContent = `${m}:${s}`;
+function updateDisplay(){
+  const m=Math.floor(pomTime/60).toString().padStart(2,'0');
+  const s=(pomTime%60).toString().padStart(2,'0');
+  pomDisplay.textContent=`${m}:${s}`;
 }
 
-startBtn.onclick = () => {
-  clearInterval(pomInterval);
-  pomInterval = setInterval(() => {
-    if (pomTime <= 0) {
-      clearInterval(pomInterval);
-      sessions++;
-      sessionsEl.textContent = sessions;
-      pomTime = 25 * 60;
-      updateDisplay();
-      alert("Pomodoro complete!");
-    } else {
+pomStart.addEventListener('click', ()=>{
+  if(interval) return;
+  interval = setInterval(()=>{
+    if(pomTime>0){
       pomTime--;
       updateDisplay();
+    } else {
+      clearInterval(interval); interval=null;
+      sessions++;
+      pomSessions.textContent=sessions;
+      pomTime=25*60;
+      updateDisplay();
+      alert('Pomodoro complete!');
     }
-  }, 1000);
-};
+  },1000);
+});
 
-pauseBtn.onclick = () => clearInterval(pomInterval);
+pomPause.addEventListener('click', ()=>{
+  clearInterval(interval);
+  interval=null;
+});
 
-resetBtn.onclick = () => {
-  clearInterval(pomInterval);
-  pomTime = 25 * 60;
+pomReset.addEventListener('click', ()=>{
+  clearInterval(interval);
+  interval=null;
+  pomTime=25*60;
   updateDisplay();
-};
+});
 updateDisplay();

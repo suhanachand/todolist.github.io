@@ -1,29 +1,40 @@
-document.addEventListener('DOMContentLoaded', ()=>{
-  const addHabit = document.getElementById('addHabit');
-  const habitName = document.getElementById('habitName');
-  const container = document.getElementById('habitsContainer');
-  let habits = JSON.parse(localStorage.getItem('sol_habits')||'[]');
+const habitsContainer = document.getElementById('habitsContainer');
+const addHabitBtn = document.getElementById('addHabit');
 
-  function render(){
-    container.innerHTML = '';
-    if(habits.length===0) container.innerHTML = '<div class="small-muted">No habits yet.</div>';
-    habits.forEach((h, idx)=>{
-      const card = document.createElement('div'); card.className='card';
-      const head = document.createElement('div'); head.innerHTML = `<strong>${h.name}</strong> <button class="icon-btn">✖</button>`;
-      head.querySelector('button').addEventListener('click', ()=>{ habits.splice(idx,1); save(); render(); });
-      card.appendChild(head);
-      const grid = document.createElement('div'); grid.className='habit-grid';
-      for(let i=0;i<7;i++){
-        const cell = document.createElement('div'); cell.className='habit-cell'; if(h.log && h.log[i]) cell.classList.add('active');
-        cell.textContent = ['S','M','T','W','T','F','S'][i];
-        cell.addEventListener('click', ()=>{ h.log = h.log||[]; h.log[i] = !h.log[i]; save(); render(); });
-        grid.appendChild(cell);
-      }
-      card.appendChild(grid);
-      container.appendChild(card);
+function loadHabits() {
+  const habits = JSON.parse(localStorage.getItem('habits')||'[]');
+  habitsContainer.innerHTML='';
+  habits.forEach((h,i)=>{
+    const div = document.createElement('div');
+    div.className='habit';
+    div.innerHTML = `<input type="checkbox" ${h.done?'checked':''}> ${h.name} <button class="delHabit" data-id="${i}">❌</button>`;
+    habitsContainer.appendChild(div);
+  });
+  document.querySelectorAll('.habit input[type="checkbox"]').forEach(cb=>{
+    cb.addEventListener('change', ()=>{
+      const habits = JSON.parse(localStorage.getItem('habits')||'[]');
+      habits[cb.parentElement.querySelector('.delHabit').dataset.id].done = cb.checked;
+      localStorage.setItem('habits', JSON.stringify(habits));
     });
-  }
-  function save(){ localStorage.setItem('sol_habits', JSON.stringify(habits)); }
-  addHabit?.addEventListener('click', ()=>{ const name = habitName.value.trim(); if(!name) return; habits.push({name, log:[]}); habitName.value=''; save(); render(); });
-  render();
+  });
+  document.querySelectorAll('.delHabit').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const habits = JSON.parse(localStorage.getItem('habits')||'[]');
+      habits.splice(btn.dataset.id,1);
+      localStorage.setItem('habits', JSON.stringify(habits));
+      loadHabits();
+    });
+  });
+}
+
+addHabitBtn?.addEventListener('click', ()=>{
+  const name = document.getElementById('habitName').value.trim();
+  if(!name) return alert('Add a habit name!');
+  const habits = JSON.parse(localStorage.getItem('habits')||'[]');
+  habits.push({name, done:false});
+  localStorage.setItem('habits', JSON.stringify(habits));
+  document.getElementById('habitName').value='';
+  loadHabits();
 });
+
+loadHabits();

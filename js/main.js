@@ -1,17 +1,15 @@
-// Dark/Light Mode Toggle
-const themeToggle = document.getElementById("themeToggle");
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  localStorage.setItem("solunaTheme", document.body.classList.contains("dark") ? "dark" : "light");
+// Theme toggle
+const themeToggle = document.getElementById('themeToggle');
+themeToggle?.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('mode', document.body.classList.contains('dark') ? 'dark' : 'light');
 });
 
-// Load theme
-if (localStorage.getItem("solunaTheme") === "dark") {
-  document.body.classList.add("dark");
-}
+// Load saved mode
+if (localStorage.getItem('mode') === 'dark') document.body.classList.add('dark');
 
-// Google Sign-in stub
-const googleSign = document.getElementById("googleSign");
-googleSign.addEventListener("click", () => {
-  alert("Google login placeholder — connect Firebase auth here.");
+// Google sign-in stub
+const googleSign = document.getElementById('googleSign');
+googleSign?.addEventListener('click', () => {
+  alert('Google login is not yet implemented. Firebase auth can be added here.');
 });

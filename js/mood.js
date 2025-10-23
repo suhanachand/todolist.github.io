@@ -1,12 +1,17 @@
-document.addEventListener('DOMContentLoaded', ()=>{
-  const moodBtns = document.querySelectorAll('.moodBtn');
-  const lastMood = document.getElementById('lastMood');
-  lastMood.innerText = localStorage.getItem('sol_mood') || '—';
-  moodBtns.forEach(b=>{
-    b.addEventListener('click', ()=> {
-      const m = b.dataset.mood;
-      localStorage.setItem('sol_mood', m);
-      lastMood.innerText = m;
-    });
+const moodButtons = document.querySelectorAll('.moodBtn');
+const lastMoodSpan = document.getElementById('lastMood');
+
+function loadMood() {
+  const mood = localStorage.getItem('mood');
+  if(mood) lastMoodSpan.textContent = mood;
+}
+
+moodButtons.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const mood = btn.dataset.mood;
+    localStorage.setItem('mood', mood);
+    loadMood();
   });
 });
+
+loadMood();

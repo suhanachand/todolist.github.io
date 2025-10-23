@@ -1,66 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pages | Soluna</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Calibri&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/pages.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pages - Soluna</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
-  <header class="app-header">
-    <div class="brand">
-      <img src="img/sun-logo.png" alt="Soluna Logo" class="logo" />
-      <h1 class="logo-text">Soluna</h1>
-      <div class="subtitle">Minimal study + routine hub</div>
-    </div>
-    <div class="actions">
-      <button id="themeToggle" class="icon">🌙</button>
-      <button id="googleSign" class="btn">Sign in with Google</button>
-    </div>
-  </header>
+<header class="app-header">
+  <div class="brand">
+    <img src="img/sun-logo.png" class="logo" />
+    <div class="logo-text">Soluna</div>
+  </div>
+  <div class="actions">
+    <button id="themeToggle" class="icon">🌙</button>
+    <button id="googleSign" class="btn">Sign in</button>
+  </div>
+</header>
 
-  <main class="layout">
-    <aside class="sidebar">
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="tasks.html">To-Do</a>
-        <a href="pages.html">Pages</a>
-        <a href="pomodoro.html">Pomodoro</a>
-        <a href="routine.html">Routine</a>
-        <a href="habits.html">Habits</a>
-        <a href="mood.html">Mood</a>
-        <a href="widgets.html">Widgets</a>
-      </nav>
-    </aside>
+<main class="layout">
+  <aside class="sidebar">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tasks.html">To-Do</a>
+      <a href="pages.html">Pages</a>
+      <a href="pomodoro.html">Pomodoro</a>
+      <a href="routine.html">Routine</a>
+      <a href="habits.html">Habits</a>
+      <a href="mood.html">Mood</a>
+      <a href="widgets.html">Widgets</a>
+    </nav>
+  </aside>
 
-    <section class="content">
-      <h2>Pages & Blocks</h2>
-      <div class="card">
-        <div class="row">
-          <input id="pageTitle" class="input" placeholder="Page title" />
-          <button id="addPage" class="btn">Create</button>
-        </div>
-        <ul id="pagesList"></ul>
+  <section class="content">
+    <h2>Pages & Blocks</h2>
+    <div class="card">
+      <div class="row">
+        <input id="pageTitle" class="input" placeholder="Page title">
+        <button id="addPage" class="btn">Create</button>
       </div>
+      <ul id="pagesList"></ul>
+    </div>
 
-      <div id="editor" class="card" style="display:none">
-        <h3 id="editorTitle"></h3>
-        <div id="blocks" class="blocks"></div>
-        <div class="row">
-          <button id="addTextBlock" class="btn">+ Text</button>
-          <button id="addCheckBlock" class="btn">+ Checklist</button>
-        </div>
+    <div id="editor" class="card" style="display:none">
+      <h3 id="editorTitle"></h3>
+      <div id="blocks" class="blocks"></div>
+      <div class="row">
+        <button id="addTextBlock" class="btn">+ Text</button>
+        <button id="addCheckBlock" class="btn">+ Checklist</button>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 
-  <footer class="app-footer">
-    <div class="muted">Soluna — local-first. Cloud optional via Firebase.</div>
-    <script src="js/firebase-config.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/pages.js"></script>
-  </footer>
+<footer class="app-footer">
+  Soluna — local-first. Cloud optional via Firebase.
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/pages.js"></script>
 </body>
 </html>

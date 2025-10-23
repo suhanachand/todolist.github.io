@@ -1,68 +1,63 @@
-let steps = [];
-let currentStep = 0;
-let routineInterval;
+const routineListEl = document.getElementById('routineList');
+const addStepBtn = document.getElementById('addStep');
+const startRoutineBtn = document.getElementById('startRoutine');
+const stopRoutineBtn = document.getElementById('stopRoutine');
+const routinePlayer = document.getElementById('routinePlayer');
+const currentStepEl = document.getElementById('currentStep');
+const routineTimerEl = document.getElementById('routineTimer');
+const routineProgress = document.getElementById('routineProgress');
+let routineSteps = JSON.parse(localStorage.getItem('routine')||'[]');
+let routineIndex=0, routineTime=null, routineInterval=null;
 
-const stepName = document.getElementById("stepName");
-const stepDuration = document.getElementById("stepDuration");
-const routineList = document.getElementById("routineList");
-const routinePlayer = document.getElementById("routinePlayer");
-const currentStepEl = document.getElementById("currentStep");
-const routineTimer = document.getElementById("routineTimer");
-const routineProgress = document.getElementById("routineProgress");
-const startRoutineBtn = document.getElementById("startRoutine");
-const completeStepBtn = document.getElementById("completeStep");
-
-function renderSteps() {
-  routineList.innerHTML = "";
-  steps.forEach((s, i) => {
-    const li = document.createElement("li");
-    li.textContent = `${s.name} - ${s.duration} min`;
-    routineList.appendChild(li);
+function renderRoutine(){
+  routineListEl.innerHTML='';
+  routineSteps.forEach((s,i)=>{
+    const li=document.createElement('li');
+    li.textContent=`${s.name} - ${s.duration} min`;
+    routineListEl.appendChild(li);
   });
 }
+renderRoutine();
 
-document.getElementById("addStep").onclick = () => {
-  if (!stepName.value || !stepDuration.value) return;
-  steps.push({ name: stepName.value, duration: parseInt(stepDuration.value) });
-  stepName.value = "";
-  stepDuration.value = "";
-  renderSteps();
-};
+addStepBtn.addEventListener('click',()=>{
+  const name = document.getElementById('stepName').value.trim();
+  const duration = parseInt(document.getElementById('stepDuration').value);
+  if(!name || !duration) return alert('Fill step name and duration!');
+  routineSteps.push({name,duration});
+  localStorage.setItem('routine', JSON.stringify(routineSteps));
+  renderRoutine();
+});
 
-startRoutineBtn.onclick = () => {
-  if (steps.length === 0) return;
-  currentStep = 0;
-  routinePlayer.style.display = "block";
+startRoutineBtn.addEventListener('click',()=>{
+  if(!routineSteps.length) return alert('No routine steps!');
+  routineIndex=0;
+  routinePlayer.style.display='block';
   startStep();
-};
+});
 
-function startStep() {
-  if (currentStep >= steps.length) {
-    routinePlayer.style.display = "none";
-    alert("Routine complete!");
-    return;
-  }
-  let time = steps[currentStep].duration * 60;
-  currentStepEl.textContent = steps[currentStep].name;
-  routineTimer.textContent = `${steps[currentStep].duration}:00`;
-  routineProgress.value = 0;
-  clearInterval(routineInterval);
-  routineInterval = setInterval(() => {
-    if (time <= 0) {
-      clearInterval(routineInterval);
-      alert("Time's up! Complete the task to move on.");
+function startStep(){
+  const step = routineSteps[routineIndex];
+  let timeLeft = step.duration*60;
+  currentStepEl.textContent=step.name;
+  routineTimerEl.textContent=`${Math.floor(timeLeft/60)}:${(timeLeft%60).toString().padStart(2,'0')}`;
+  routineProgress.max=timeLeft;
+  routineProgress.value=timeLeft;
+
+  routineInterval=setInterval(()=>{
+    if(timeLeft>0){
+      timeLeft--;
+      routineTimerEl.textContent=`${Math.floor(timeLeft/60)}:${(timeLeft%60).toString().padStart(2,'0')}`;
+      routineProgress.value=timeLeft;
     } else {
-      time--;
-      const m = Math.floor(time / 60).toString().padStart(2, "0");
-      const s = (time % 60).toString().padStart(2, "0");
-      routineTimer.textContent = `${m}:${s}`;
-      routineProgress.value = ((steps[currentStep].duration*60 - time)/(steps[currentStep].duration*60))*100;
+      clearInterval(routineInterval);
+      routineIndex++;
+      if(routineIndex<routineSteps.length) startStep();
+      else alert('Routine complete!');
     }
-  }, 1000);
+  },1000);
 }
 
-completeStepBtn.onclick = () => {
+stopRoutineBtn.addEventListener('click',()=>{
   clearInterval(routineInterval);
-  currentStep++;
-  startStep();
-};
+  routinePlayer.style.display='none';
+});

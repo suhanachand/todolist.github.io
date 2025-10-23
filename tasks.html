@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tasks | Soluna</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Calibri&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/tasks.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasks - Soluna</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/tasks.css">
 </head>
 <body>
   <header class="app-header">
     <div class="brand">
-      <img src="img/sun-logo.png" alt="Soluna Logo" class="logo" />
-      <h1 class="logo-text">Soluna</h1>
-      <div class="subtitle">Minimal study + routine hub</div>
+      <img src="img/sun-logo.png" class="logo" />
+      <div class="logo-text">Soluna</div>
     </div>
     <div class="actions">
       <button id="themeToggle" class="icon">🌙</button>
-      <button id="googleSign" class="btn">Sign in with Google</button>
+      <button id="googleSign" class="btn">Sign in</button>
     </div>
   </header>
 
@@ -36,30 +34,25 @@
     </aside>
 
     <section class="content">
-      <h2>To-Do</h2>
+      <h2>To-Do List</h2>
       <div class="card">
         <div class="row">
-          <input id="taskTitle" class="input" placeholder="Task title" />
-          <input id="taskTag" class="input" placeholder="Tag (School, Personal)" />
-          <input id="taskDue" class="input" type="date" />
+          <input id="taskTitle" class="input" placeholder="Task title">
+          <input id="taskTag" class="input" placeholder="Tag (School, Personal)" style="width:140px">
+          <input id="taskDue" class="input" type="date">
           <button id="addTaskBtn" class="btn">Add</button>
         </div>
       </div>
 
       <div id="tasksContainer" class="card"></div>
-
-      <div class="card small-muted">
-        <button id="exportTasks" class="icon">Export Tasks</button>
-        <input id="importTasksFile" type="file" style="display:none" />
-      </div>
     </section>
   </main>
 
   <footer class="app-footer">
-    <div class="muted">Soluna — local-first. Cloud optional via Firebase.</div>
-    <script src="js/firebase-config.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/tasks.js"></script>
+    Soluna — local-first. Cloud optional via Firebase.
   </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/tasks.js"></script>
 </body>
 </html>
