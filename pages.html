@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soluna — Pages</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Carlito:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><div class="logo">S</div><div><div class="site-name">Soluna</div><div class="subtitle">Minimal study + routine hub</div></div></div>
+    <div class="header-actions"><button id="themeTogglePg" class="icon-btn">🌙</button><button id="googleSignBtnPg" class="btn">Sign in</button></div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar"><nav><a href="index.html">Home</a><a href="pages.html" class="nav-link active">Pages</a></nav></aside>
+
+    <section class="content">
+      <h1 class="page-title">Pages & Blocks</h1>
+
+      <div class="card">
+        <div class="row">
+          <input id="pageTitle" class="input" placeholder="Page title" />
+          <button id="addPage" class="btn">Create</button>
+        </div>
+
+        <ul id="pagesList" style="margin-top:12px"></ul>
+      </div>
+
+      <div id="editor" class="card" style="display:none">
+        <h3 id="editorTitle">Editing</h3>
+        <div id="blocks" class="blocks"></div>
+        <div style="margin-top:8px">
+          <button id="addTextBlock" class="btn">+ Text</button>
+          <button id="addCheckBlock" class="btn">+ Checklist</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><small>Soluna — Pages</small></footer>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>
