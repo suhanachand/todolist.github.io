@@ -1,86 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Soluna — Productivity Studio</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Carlito:wght@300;400;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/widgets.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soluna</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Calibri&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-  <header class="site-header">
+  <header class="app-header">
     <div class="brand">
-      <div class="logo">S</div>
-      <div>
-        <div class="site-name">Soluna</div>
-        <div class="subtitle">Minimal study + routine hub</div>
-      </div>
+      <img src="img/sun-logo.png" alt="Soluna Logo" class="logo" />
+      <h1 class="logo-text">Soluna</h1>
+      <div class="subtitle">Minimal study + routine hub</div>
     </div>
-
-    <div class="header-actions">
-      <button id="themeToggle" class="icon-btn" title="Toggle theme">🌙</button>
-      <button id="exportBtn" class="icon-btn" title="Export data">⤓</button>
-      <button id="importBtn" class="icon-btn" title="Import data">⤒</button>
-      <button id="googleSignBtn" class="btn">Sign in</button>
+    <div class="actions">
+      <button id="themeToggle" class="icon">🌙</button>
+      <button id="googleSign" class="btn">Sign in with Google</button>
     </div>
   </header>
 
   <main class="layout">
     <aside class="sidebar">
       <nav>
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="tasks.html" class="nav-link">To-Do</a>
-        <a href="pages.html" class="nav-link">Pages</a>
-        <a href="pomodoro.html" class="nav-link">Pomodoro</a>
-        <a href="routine.html" class="nav-link">Routine</a>
-        <a href="habits.html" class="nav-link">Habits</a>
-        <a href="mood.html" class="nav-link">Mood</a>
-        <a href="widgets.html" class="nav-link">Widgets</a>
-        <a href="to-dolist.html" class="nav-link">To-do</a>
+        <a href="index.html">Home</a>
+        <a href="tasks.html">To-Do</a>
+        <a href="pages.html">Pages</a>
+        <a href="pomodoro.html">Pomodoro</a>
+        <a href="routine.html">Routine</a>
+        <a href="habits.html">Habits</a>
+        <a href="mood.html">Mood</a>
+        <a href="widgets.html">Widgets</a>
       </nav>
-      <div class="sidebar-footer">
-        <div>Signed in as: <span id="userEmail">guest</span></div>
-        <div>Mode: <span id="modeLabel">light</span></div>
-      </div>
     </aside>
 
     <section class="content">
-      <h1 class="page-title">Welcome to Soluna</h1>
-      <p class="lead">A lightweight, local-first productivity studio. No signup required, but Google sign-in is available for cloud sync.</p>
-
-      <div class="cards-grid">
-        <a class="card" href="tasks.html"><strong>Tasks</strong><p>Lists, tags and deadlines</p></a>
-        <a class="card" href="pomodoro.html"><strong>Pomodoro</strong><p>Focus sessions and logs</p></a>
-        <a class="card" href="routine.html"><strong>Routine Mode</strong><p>Build & run daily routines</p></a>
-        <a class="card" href="pages.html"><strong>Pages</strong><p>Blocks-based notes editor</p></a>
-        <a class="card" href="habits.html"><strong>Habits</strong><p>Visual habit tracker</p></a>
-        <a class="card" href="mood.html"><strong>Mood</strong><p>Track your energy & feelings</p></a>
-        <a class="card" href="widgets.html"><strong>Widgets</strong><p>Quote, weather, little helpers</p></a>
-      </div>
-
-      <div class="card">
-        <h3>Quick Tips</h3>
-        <ul>
-          <li>Use Routine Mode to chain timed steps like a real morning routine.</li>
-          <li>Complete Pomodoro sessions to earn XP and keep your streak alive.</li>
-          <li>Export to back up, import to restore.</li>
-        </ul>
-      </div>
+      <h2>Welcome to Soluna</h2>
+      <p class="muted">Your all-in-one study & routine workspace. Pick a tool from the left to get started!</p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <small>© 2025 Soluna — local-first productivity. Cloud optional via Firebase.</small>
+  <footer class="app-footer">
+    <div class="muted">Soluna — local-first. Cloud optional via Firebase.</div>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
   </footer>
-
-  <!-- Scripts -->
-  <script src="js/firebase-config.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/widgets.js"></script>
 </body>
 </html>

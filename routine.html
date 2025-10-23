@@ -1,55 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Soluna — Routine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Carlito:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/routine.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Routine | Soluna</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Calibri&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/routine.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand"><div class="logo">S</div><div><div class="site-name">Soluna</div><div class="subtitle">Minimal study + routine hub</div></div></div>
-    <div class="header-actions"><button id="themeToggleR" class="icon-btn">🌙</button><button id="googleSignBtnR" class="btn">Sign in</button></div>
+  <header class="app-header">
+    <div class="brand">
+      <img src="img/sun-logo.png" alt="Soluna Logo" class="logo" />
+      <h1 class="logo-text">Soluna</h1>
+      <div class="subtitle">Minimal study + routine hub</div>
+    </div>
+    <div class="actions">
+      <button id="themeToggle" class="icon">🌙</button>
+      <button id="googleSign" class="btn">Sign in with Google</button>
+    </div>
   </header>
 
   <main class="layout">
     <aside class="sidebar">
-      <nav><a href="index.html">Home</a><a href="tasks.html">Tasks</a><a href="routine.html" class="nav-link active">Routine</a></nav>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="tasks.html">To-Do</a>
+        <a href="pages.html">Pages</a>
+        <a href="pomodoro.html">Pomodoro</a>
+        <a href="routine.html">Routine</a>
+        <a href="habits.html">Habits</a>
+        <a href="mood.html">Mood</a>
+        <a href="widgets.html">Widgets</a>
+      </nav>
     </aside>
 
     <section class="content">
-      <h1 class="page-title">Routine Mode</h1>
-
+      <h2>Routine Mode</h2>
       <div class="card">
         <div class="row">
           <input id="stepName" class="input" placeholder="Step name" />
-          <input id="stepDuration" class="input" type="number" min="1" placeholder="Minutes" style="width:120px" />
+          <input id="stepDuration" class="input" type="number" min="1" placeholder="Minutes" />
           <button id="addStep" class="btn">Add</button>
         </div>
-
-        <ul id="routineList" class="routine-list" style="margin-top:12px"></ul>
-
+        <ul id="routineList" class="routine-list"></ul>
         <div class="row" style="margin-top:10px">
-          <button id="startRoutine" class="btn">Start Routine ▶</button>
-          <button id="stopRoutine" class="icon-btn">Stop</button>
-          <div class="small" style="margin-left:10px">Streak: <span id="routineStreak">0</span></div>
+          <button id="startRoutine" class="btn">Start Routine</button>
+          <button id="stopRoutine" class="icon">Stop</button>
         </div>
       </div>
 
       <div id="routinePlayer" class="card" style="display:none">
         <h3 id="currentStep">—</h3>
         <div id="routineTimer" class="pom-display">00:00</div>
+        <button id="completeStep" class="btn">✔ Done</button>
         <progress id="routineProgress" max="100" value="0" style="width:100%"></progress>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><small>Soluna — Routine</small></footer>
-
-  <script src="js/firebase-config.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/routine.js"></script>
+  <footer class="app-footer">
+    <div class="muted">Soluna — local-first. Cloud optional via Firebase.</div>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/routine.js"></script>
+  </footer>
 </body>
 </html>

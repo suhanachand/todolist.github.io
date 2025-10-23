@@ -1,33 +1,135 @@
-:root{
-  --bg:#fff; --fg:#111; --muted:#7d7d7d; --card:#f6f6f6; --accent:#000;
+/* Fonts */
+body {
+  font-family: 'Calibri', sans-serif;
+  background-color: #f5f5f5;
+  color: #111;
+  margin: 0;
+  padding: 0;
 }
-*{box-sizing:border-box}
-body{margin:0;font-family:'Carlito', 'Calibri', Arial, sans-serif;background:var(--bg);color:var(--fg);transition:background .2s,color .2s}
-.site-header{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:var(--card);border-bottom:1px solid rgba(0,0,0,0.06)}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:44px;height:44px;border-radius:8px;background:var(--accent);color:var(--bg);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.05rem}
-.site-name{font-family:'Lobster', cursive;font-size:1.4rem}
-.subtitle{font-size:0.85rem;color:var(--muted)}
-.header-actions{display:flex;gap:8px;align-items:center}
-.icon-btn{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px;border-radius:8px;cursor:pointer}
-.btn{background:var(--accent);color:var(--bg);border:none;padding:8px 10px;border-radius:8px;cursor:pointer}
-.layout{display:flex;gap:18px;padding:18px}
-.sidebar{width:220px}
-.sidebar nav{display:flex;flex-direction:column;gap:6px}
-.nav-link{display:block;padding:8px;border-radius:8px;text-decoration:none;color:var(--fg)}
-.nav-link.active{background:rgba(0,0,0,0.04)}
-.content{flex:1}
-.card{background:var(--card);padding:14px;border-radius:10px;margin-bottom:14px}
-.row{display:flex;gap:8px;align-items:center}
-.input{padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)}
-.page-title{font-size:1.25rem;margin:0 0 8px 0}
-.small{font-size:0.9rem;color:var(--muted)}
-.small-muted{color:var(--muted)}
-.pom-display{font-size:2.2rem;text-align:center;padding:16px;border-radius:8px;background:rgba(0,0,0,0.02)}
-.site-footer{text-align:center;padding:12px;background:transparent;color:var(--muted);border-top:1px solid rgba(0,0,0,0.03)}
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:12px 0}
-.card a{color:inherit;text-decoration:none}
-.routine-list{list-style:none;padding:0;margin:0}
-.muted{color:var(--muted)}
-/* dark mode */
-body.dark{--bg:#070707;--fg:#efefef;--muted:#bdbdbd;--card:#111;--accent:#fff}
+
+body.dark {
+  background-color: #111;
+  color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+body.dark header.app-header {
+  background: #222;
+  border-bottom: 1px solid #444;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand .logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.brand .logo-text {
+  font-family: 'Lobster', cursive;
+  font-size: 1.5rem;
+}
+
+.actions button {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.layout {
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #eee;
+  padding: 10px;
+}
+
+body.dark .sidebar {
+  background-color: #222;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 8px 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.sidebar nav a:hover {
+  background-color: #ddd;
+}
+
+body.dark .sidebar nav a:hover {
+  background-color: #333;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+body.dark .card {
+  background: #222;
+}
+
+.input {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.btn {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.muted {
+  color: #666;
+}
+
+body.dark .muted {
+  color: #aaa;
+}
+
+footer.app-footer {
+  text-align: center;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+body.dark footer.app-footer {
+  background: #222;
+}

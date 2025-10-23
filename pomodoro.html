@@ -1,17 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Soluna — Pomodoro</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Carlito:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/pomodoro.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro | Soluna</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Calibri&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/pomodoro.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand"><div class="logo">S</div><div><div class="site-name">Soluna</div><div class="subtitle">Minimal study + routine hub</div></div></div>
-    <div class="header-actions"><button id="themeToggleP" class="icon-btn">🌙</button><button id="googleSignBtnP" class="btn">Sign in</button></div>
+  <header class="app-header">
+    <div class="brand">
+      <img src="img/sun-logo.png" alt="Soluna Logo" class="logo" />
+      <h1 class="logo-text">Soluna</h1>
+      <div class="subtitle">Minimal study + routine hub</div>
+    </div>
+    <div class="actions">
+      <button id="themeToggle" class="icon">🌙</button>
+      <button id="googleSign" class="btn">Sign in with Google</button>
+    </div>
   </header>
 
   <main class="layout">
@@ -19,36 +26,34 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="tasks.html">To-Do</a>
-        <a href="pomodoro.html" class="nav-link active">Pomodoro</a>
+        <a href="pages.html">Pages</a>
+        <a href="pomodoro.html">Pomodoro</a>
         <a href="routine.html">Routine</a>
+        <a href="habits.html">Habits</a>
+        <a href="mood.html">Mood</a>
+        <a href="widgets.html">Widgets</a>
       </nav>
     </aside>
 
     <section class="content">
-      <h1 class="page-title">Pomodoro</h1>
-
+      <h2>Pomodoro Timer</h2>
       <div class="card">
         <div id="pomDisplay" class="pom-display">25:00</div>
-        <div class="row" style="margin-top:10px">
+        <div class="row">
           <button id="pomStart" class="btn">Start</button>
-          <button id="pomPause" class="icon-btn">Pause</button>
-          <button id="pomReset" class="icon-btn">Reset</button>
-          <div class="small" style="margin-left:10px">Sessions: <span id="pomSessions">0</span></div>
+          <button id="pomPause" class="icon">Pause</button>
+          <button id="pomReset" class="icon">Reset</button>
+          <div class="small">Sessions: <span id="pomSessions">0</span></div>
         </div>
-      </div>
-
-      <div class="card">
-        <h4>Focus Mode</h4>
-        <p class="small-muted">Click "Start" and then "Enter Focus" to hide the UI (manual implementation in this demo)</p>
-        <button id="enterFocus" class="btn">Enter Focus</button>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><small>Soluna — Pomodoro</small></footer>
-
-  <script src="js/firebase-config.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/pomodoro.js"></script>
+  <footer class="app-footer">
+    <div class="muted">Soluna — local-first. Cloud optional via Firebase.</div>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pomodoro.js"></script>
+  </footer>
 </body>
 </html>

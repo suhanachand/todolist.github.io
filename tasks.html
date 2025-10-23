@@ -1,47 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Soluna — Tasks</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Carlito:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/tasks.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tasks | Soluna</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Calibri&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/tasks.css" />
 </head>
 <body>
-  <!-- header (same as index) -->
-  <header class="site-header">
+  <header class="app-header">
     <div class="brand">
-      <div class="logo">S</div>
-      <div><div class="site-name">Soluna</div><div class="subtitle">Minimal study + routine hub</div></div>
+      <img src="img/sun-logo.png" alt="Soluna Logo" class="logo" />
+      <h1 class="logo-text">Soluna</h1>
+      <div class="subtitle">Minimal study + routine hub</div>
     </div>
-    <div class="header-actions">
-      <button id="themeToggleTasks" class="icon-btn">🌙</button>
-      <button id="exportBtnTasks" class="icon-btn">⤓</button>
-      <button id="importBtnTasks" class="icon-btn">⤒</button>
-      <button id="googleSignBtnTasks" class="btn">Sign in</button>
+    <div class="actions">
+      <button id="themeToggle" class="icon">🌙</button>
+      <button id="googleSign" class="btn">Sign in with Google</button>
     </div>
   </header>
 
   <main class="layout">
     <aside class="sidebar">
       <nav>
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="tasks.html" class="nav-link active">To-Do</a>
-        <a href="pages.html" class="nav-link">Pages</a>
-        <a href="pomodoro.html" class="nav-link">Pomodoro</a>
-        <a href="routine.html" class="nav-link">Routine</a>
+        <a href="index.html">Home</a>
+        <a href="tasks.html">To-Do</a>
+        <a href="pages.html">Pages</a>
+        <a href="pomodoro.html">Pomodoro</a>
+        <a href="routine.html">Routine</a>
+        <a href="habits.html">Habits</a>
+        <a href="mood.html">Mood</a>
+        <a href="widgets.html">Widgets</a>
       </nav>
-      <div class="sidebar-footer"><div>Signed in as: <span id="userEmailTasks">guest</span></div></div>
     </aside>
 
     <section class="content">
-      <h1 class="page-title">Tasks</h1>
-
+      <h2>To-Do</h2>
       <div class="card">
         <div class="row">
           <input id="taskTitle" class="input" placeholder="Task title" />
-          <input id="taskTag" class="input" placeholder="Tag (School, Personal)" style="width:150px" />
+          <input id="taskTag" class="input" placeholder="Tag (School, Personal)" />
           <input id="taskDue" class="input" type="date" />
           <button id="addTaskBtn" class="btn">Add</button>
         </div>
@@ -50,16 +49,17 @@
       <div id="tasksContainer" class="card"></div>
 
       <div class="card small-muted">
-        <button id="exportTasksBtn" class="icon-btn">Export Tasks</button>
+        <button id="exportTasks" class="icon">Export Tasks</button>
         <input id="importTasksFile" type="file" style="display:none" />
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><small>Soluna — tasks</small></footer>
-
-  <script src="js/firebase-config.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/tasks.js"></script>
+  <footer class="app-footer">
+    <div class="muted">Soluna — local-first. Cloud optional via Firebase.</div>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/tasks.js"></script>
+  </footer>
 </body>
 </html>
