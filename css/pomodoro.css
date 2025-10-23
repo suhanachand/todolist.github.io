@@ -1,2 +1,5 @@
-/* pomodoro extras */
-.pom-display{font-weight:700}
+.pom-display{
+  font-size:48px; text-align:center; margin:10px 0;
+}
+#pomStart,#pomPause,#pomReset{margin-right:5px;}
+#pomSessions{font-weight:bold;}
