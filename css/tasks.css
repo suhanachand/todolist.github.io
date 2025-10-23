@@ -1,0 +1,4 @@
+/* additional task styles */
+.todo-item{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;margin-bottom:8px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.02))}
+.todo-left{display:flex;gap:10px;align-items:center}
+.tag{padding:4px 8px;border-radius:999px;background:#eaeaea;font-size:0.85rem}
