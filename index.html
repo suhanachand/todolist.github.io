@@ -1,52 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina - Study Productivity Hub</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="auth/googleAuth.js" defer></script>
-    <script src="js/main.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soluna — Productivity Studio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Carlito:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/widgets.css">
 </head>
 <body>
-    <div class="app">
-        <header>
-            <h1>Soluna</h1>
-            <button id="mode-toggle">🌙</button>
-        </header>
-
-        <main>
-            <section class="todo-section">
-                <h2>My Tasks</h2>
-                <div class="input-group">
-                    <input type="text" id="new-task" placeholder="Add a new task">
-                    <button id="add-task">Add</button>
-                </div>
-                <ul id="task-list"></ul>
-                <div class="dashboard-links">
-            <a href="todo.html">To-Do List</a>
-            <a href="notes.html">Notes & Pages</a>
-            <a href="pomodoro.html">Pomodoro Timer</a>
-            <a href="calendar.html">Calendar</a>
-            <a href="streaks.html">Streak Tracker</a>
-            <a href="templates.html">Study Methods</a>
-            <a href="gamification.html">Rewards</a>
-            <a href="mood.html">Mood Tracker</a>
-            <a href="focus.html">Focus Mode</a>
-            <a href="habits.html">Habit Tracker</a>
-            <a href="mindmap.html">Mind Map</a>
-            <a href="flashcards.html">Flashcards</a>
-            <a href="vault.html">Reference Vault</a>
-            <a href="themes.html">Themes</a>
-            <a href="dashboard-custom.html">Custom Dashboard</a>
-            <a href="widgets.html">Widgets</a>
-        </div>
-            </section>
-        </main>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">S</div>
+      <div>
+        <div class="site-name">Soluna</div>
+        <div class="subtitle">Minimal study + routine hub</div>
+      </div>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Lumina</p>
-    </footer>
+    <div class="header-actions">
+      <button id="themeToggle" class="icon-btn" title="Toggle theme">🌙</button>
+      <button id="exportBtn" class="icon-btn" title="Export data">⤓</button>
+      <button id="importBtn" class="icon-btn" title="Import data">⤒</button>
+      <button id="googleSignBtn" class="btn">Sign in</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="tasks.html" class="nav-link">To-Do</a>
+        <a href="pages.html" class="nav-link">Pages</a>
+        <a href="pomodoro.html" class="nav-link">Pomodoro</a>
+        <a href="routine.html" class="nav-link">Routine</a>
+        <a href="habits.html" class="nav-link">Habits</a>
+        <a href="mood.html" class="nav-link">Mood</a>
+        <a href="widgets.html" class="nav-link">Widgets</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div>Signed in as: <span id="userEmail">guest</span></div>
+        <div>Mode: <span id="modeLabel">light</span></div>
+      </div>
+    </aside>
+
+    <section class="content">
+      <h1 class="page-title">Welcome to Soluna</h1>
+      <p class="lead">A lightweight, local-first productivity studio. No signup required, but Google sign-in is available for cloud sync.</p>
+
+      <div class="cards-grid">
+        <a class="card" href="tasks.html"><strong>Tasks</strong><p>Lists, tags and deadlines</p></a>
+        <a class="card" href="pomodoro.html"><strong>Pomodoro</strong><p>Focus sessions and logs</p></a>
+        <a class="card" href="routine.html"><strong>Routine Mode</strong><p>Build & run daily routines</p></a>
+        <a class="card" href="pages.html"><strong>Pages</strong><p>Blocks-based notes editor</p></a>
+        <a class="card" href="habits.html"><strong>Habits</strong><p>Visual habit tracker</p></a>
+        <a class="card" href="mood.html"><strong>Mood</strong><p>Track your energy & feelings</p></a>
+        <a class="card" href="widgets.html"><strong>Widgets</strong><p>Quote, weather, little helpers</p></a>
+      </div>
+
+      <div class="card">
+        <h3>Quick Tips</h3>
+        <ul>
+          <li>Use Routine Mode to chain timed steps like a real morning routine.</li>
+          <li>Complete Pomodoro sessions to earn XP and keep your streak alive.</li>
+          <li>Export to back up, import to restore.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© 2025 Soluna — local-first productivity. Cloud optional via Firebase.</small>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/widgets.js"></script>
 </body>
 </html>
