@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <%- include('partials/head', { title: 'Pomodoro', extraCss: ['pomodoro.css'] }) %>
+  <body>
+    <%- include('partials/header') %>
+    <main class="layout">
+      <aside class="sidebar">
+        <nav><a href="/">Home</a><a href="/tasks">Tasks</a><a href="/routine">Routine</a></nav>
+      </aside>
+      <section class="content">
+        <h2>Pomodoro</h2>
+        <div class="card">
+          <div id="pomDisplay" class="pom-display">25:00</div>
+          <div class="row">
+            <button id="pomStart" class="btn">Start</button>
+            <button id="pomPause" class="icon">Pause</button>
+            <button id="pomReset" class="icon">Reset</button>
+            <div class="small">Sessions: <span id="pomSessions">0</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include('partials/footer', { extraJs: ['pomodoro.js'] }) %>
+  </body>
+</html>

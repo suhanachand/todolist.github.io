@@ -1,0 +1,9 @@
+<footer class="app-footer">
+  <div class="muted">Soluna — local-first. Cloud optional via Firebase.</div>
+  <script src="/js/main.js"></script>
+  <% if (extraJs) { %>
+    <% extraJs.forEach(js => { %>
+      <script src="/js/<%= js %>"></script>
+    <% }) %>
+  <% } %>
+</footer>

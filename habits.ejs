@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <%- include('partials/head', { title: 'Habits', extraCss: ['habits.css'] }) %>
+  <body>
+    <%- include('partials/header') %>
+    <main class="layout">
+      <aside class="sidebar"><nav><a href="/">Home</a></nav></aside>
+      <section class="content">
+        <h2>Habits</h2>
+        <div class="card">
+          <div class="row">
+            <input id="habitName" class="input" placeholder="Habit name" />
+            <button id="addHabit" class="btn">Add</button>
+          </div>
+          <div id="habitsContainer"></div>
+        </div>
+      </section>
+    </main>
+    <%- include('partials/footer', { extraJs: ['habits.js'] }) %>
+  </body>
+</html>

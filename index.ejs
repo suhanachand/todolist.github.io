@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <%- include('partials/head', { title: 'Soluna', extraCss: [] }) %>
+  <body class="<%= (localStorageMode && localStorageMode==='dark') ? 'dark' : '' %>">
+    <%- include('partials/header') %>
+    <main class="layout">
+      <aside class="sidebar">
+        <nav>
+          <a href="/tasks">To-Do</a>
+          <a href="/pages">Pages</a>
+          <a href="/pomodoro">Pomodoro</a>
+          <a href="/routine">Routine</a>
+          <a href="/habits">Habits</a>
+          <a href="/widgets">Widgets</a>
+        </nav>
+      </aside>
+
+      <section class="content">
+        <h2>Welcome to Soluna</h2>
+        <p class="muted">Pick a tool from the left. Try Routine Mode and Pomodoro.</p>
+      </section>
+    </main>
+    <%- include('partials/footer', { extraJs: [] }) %>
+  </body>
+</html>

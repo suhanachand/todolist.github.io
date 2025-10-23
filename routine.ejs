@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <%- include('partials/head', { title: 'Routine', extraCss: ['routine.css'] }) %>
+  <body>
+    <%- include('partials/header') %>
+    <main class="layout">
+      <aside class="sidebar"><nav><a href="/">Home</a><a href="/tasks">Tasks</a></nav></aside>
+      <section class="content">
+        <h2>Routine Mode</h2>
+        <div class="card">
+          <div class="row">
+            <input id="stepName" class="input" placeholder="Step name" />
+            <input id="stepDuration" class="input" type="number" min="1" placeholder="Minutes" style="width:110px" />
+            <button id="addStep" class="btn">Add</button>
+          </div>
+          <ul id="routineList" class="routine-list"></ul>
+          <div class="row" style="margin-top:10px">
+            <button id="startRoutine" class="btn">Start Routine</button>
+            <button id="stopRoutine" class="icon">Stop</button>
+            <div class="small">Streak: <span id="routineStreak">0</span></div>
+          </div>
+        </div>
+
+        <div id="routinePlayer" class="card" style="display:none">
+          <h3 id="currentStep">—</h3>
+          <div id="routineTimer" class="pom-display">00:00</div>
+          <progress id="routineProgress" max="100" value="0" style="width:100%"></progress>
+        </div>
+      </section>
+    </main>
+    <%- include('partials/footer', { extraJs: ['routine.js'] }) %>
+  </body>
+</html>

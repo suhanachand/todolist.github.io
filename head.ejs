@@ -1,0 +1,11 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title><%= title || "Soluna" %></title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <% if (extraCss) { %>
+    <% extraCss.forEach(css => { %>
+      <link rel="stylesheet" href="/css/<%= css %>" />
+    <% }) %>
+  <% } %>
+</head>
