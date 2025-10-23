@@ -1,2 +1,8 @@
-.moodBtn{font-size:28px;margin-right:5px; cursor:pointer;}
-#lastMood{font-weight:bold;}
+#pagesList li{
+  cursor:pointer; padding:5px; margin:3px 0; background:#f5f5f5; border-radius:4px;
+}
+body.dark #pagesList li{background:#333;}
+#editor .block{
+  border:1px solid #ccc; border-radius:4px; padding:5px; margin:5px 0;
+}
+body.dark #editor .block{border-color:#555;}
