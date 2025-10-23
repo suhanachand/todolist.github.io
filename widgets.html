@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soluna — Widgets</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Carlito:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/widgets.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><div class="logo">S</div><div><div class="site-name">Soluna</div><div class="subtitle">Minimal study + routine hub</div></div></div>
+    <div class="header-actions"><button id="themeToggleW" class="icon-btn">🌙</button><button id="googleSignBtnW" class="btn">Sign in</button></div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar"><nav><a href="index.html">Home</a><a href="widgets.html" class="nav-link active">Widgets</a></nav></aside>
+
+    <section class="content">
+      <h1 class="page-title">Widgets</h1>
+
+      <div class="card">
+        <h4>Quote of the Day</h4>
+        <div id="quoteOfDay" class="small-muted">Loading quote...</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><small>Soluna — Widgets</small></footer>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/widgets.js"></script>
+</body>
+</html>
