@@ -1,2 +1,28 @@
-.moodBtn{font-size:28px;margin-right:5px; cursor:pointer;}
-#lastMood{font-weight:bold;}
+/* ---------- Mood Buttons ---------- */
+.moodBtn {
+  font-size: 32px;            /* slightly larger for emphasis */
+  margin-right: 8px;          /* more breathing room */
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.moodBtn:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+.moodBtn:active {
+  transform: scale(1.1);
+}
+
+/* ---------- Last Mood Display ---------- */
+#lastMood {
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 5px;
+  color: #333;
+}
+
+body.dark #lastMood {
+  color: #fffeab;
+}

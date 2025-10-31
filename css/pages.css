@@ -1,8 +1,47 @@
-#pagesList li{
-  cursor:pointer; padding:5px; margin:3px 0; background:#f5f5f5; border-radius:4px;
+/* ---------- Pages List ---------- */
+#pagesList li {
+  cursor: pointer;
+  padding: 8px 10px;            /* more padding for better click area */
+  margin: 5px 0;
+  background: #f5f5f5;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.2s;
 }
-body.dark #pagesList li{background:#333;}
-#editor .block{
-  border:1px solid #ccc; border-radius:4px; padding:5px; margin:5px 0;
+
+#pagesList li:hover {
+  background: #e0e0e0;
+  transform: translateX(3px);
 }
-body.dark #editor .block{border-color:#555;}
+
+body.dark #pagesList li {
+  background: #333;
+}
+
+body.dark #pagesList li:hover {
+  background: #444;
+}
+
+/* ---------- Editor Blocks ---------- */
+#editor .block {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin: 6px 0;
+  background: #fff;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+#editor .block:hover {
+  border-color: #999;
+  background: #f9f9f9;
+}
+
+body.dark #editor .block {
+  border-color: #555;
+  background: #222;
+}
+
+body.dark #editor .block:hover {
+  border-color: #888;
+  background: #2a2a2a;
+}

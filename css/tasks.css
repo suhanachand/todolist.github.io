@@ -1,7 +1,47 @@
+/* ---------- Task List ---------- */
 #tasksContainer .task {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:5px; margin:5px 0; background:#fefefe; border-radius:4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  margin: 6px 0;
+  background: #fefefe;
+  border-radius: 6px;
+  font-family: 'Calibri', sans-serif;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: background 0.2s, color 0.2s;
 }
-body.dark #tasksContainer .task{background:#333;}
-.task span{flex:1; margin-left:5px;}
-.delTask{background:none;border:none;cursor:pointer;font-size:16px;color:red;}
+
+#tasksContainer .task:hover {
+  background: #f0f0f0;
+}
+
+body.dark #tasksContainer .task {
+  background: #333;
+  color: #fffeab;
+}
+
+body.dark #tasksContainer .task:hover {
+  background: #444;
+}
+
+/* ---------- Task Text ---------- */
+.task span {
+  flex: 1;
+  margin-left: 8px;
+  word-break: break-word;
+}
+
+/* ---------- Delete Button ---------- */
+.delTask {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: red;
+  transition: color 0.2s;
+}
+
+.delTask:hover {
+  color: #ff6666;
+}

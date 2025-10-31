@@ -1,5 +1,45 @@
-.pom-display{
-  font-size:48px; text-align:center; margin:10px 0;
+/* ---------- Pomodoro Display ---------- */
+.pom-display {
+  font-size: 48px;
+  text-align: center;
+  margin: 15px 0;
+  font-family: 'Calibri', sans-serif;
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background 0.2s, color 0.2s;
 }
-#pomStart,#pomPause,#pomReset{margin-right:5px;}
-#pomSessions{font-weight:bold;}
+
+body.dark .pom-display {
+  background: #222;
+  color: #fffeab;
+}
+
+/* ---------- Pomodoro Buttons ---------- */
+#pomStart, #pomPause, #pomReset {
+  margin-right: 8px;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+#pomStart { background: #4caf50; color: #fff; }
+#pomPause { background: #ff9800; color: #fff; }
+#pomReset { background: #f44336; color: #fff; }
+
+#pomStart:hover { background: #45a049; }
+#pomPause:hover { background: #fb8c00; }
+#pomReset:hover { background: #e53935; }
+
+body.dark #pomStart { background: #388e3c; }
+body.dark #pomPause { background: #f57c00; }
+body.dark #pomReset { background: #d32f2f; }
+
+#pomSessions {
+  font-weight: bold;
+  margin-left: 10px;
+}

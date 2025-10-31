@@ -8,8 +8,4 @@ themeToggle?.addEventListener('click', () => {
 // Load saved mode
 if (localStorage.getItem('mode') === 'dark') document.body.classList.add('dark');
 
-// Google sign-in stub
-const googleSign = document.getElementById('googleSign');
-googleSign?.addEventListener('click', () => {
-  alert('Google login is not yet implemented. Firebase auth can be added here.');
-});
+
